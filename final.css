@@ -1,0 +1,31 @@
+.delete {
+  background: red;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.text{
+  font-size: 16px;
+}
+
+.redText{
+  color: red;
+}
+
+.greenText{
+  color: green;
+}
+
+.blueText{
+  color: blue;
+}
+
+.choice{
+  width: 35%;
+}
+
+.mind{
+  width: 55%;
+}

@@ -1,0 +1,54 @@
+<!-- Let the user pick what kind of input they want and depending on if a quote, link, or text is selected then the color of output will change depending on what they choose -->
+
+<head>
+  <title>final</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Choose Your Quote, Link, or Text!</h1>
+      <hr>
+
+    <h3>Go Ahead, Choose!</h3>
+    <form>
+      <div class="form-group">
+
+        <select id="color" onclick="setColor()" class="form-control">
+          <option class="redText" value="red">Quote</option>
+          <option class="blueText" value="blue">Link</option>
+          <option class="greenText" value="green">Text</option>
+        </select>
+      </div>
+
+      <!-- <div class="alert alert-danger" style="display:none;">Your forgot to enter something.</div> -->
+    </form>
+
+      <br>
+
+      <form class="new-resolution">
+        <input class="choice" type="text" name="cat" placeholder="What kind of Quote, Link, or Text? Ex. Funny, Inspirational, etc.">
+        <input class="mind" type="text" name="title" placeholder="What's On Your Mind?">
+        <input type="submit" value="Submit">
+      </form>
+    </header>
+    <br>
+    <ul>
+      {{#each resolutions}}
+        {{> resolution}}
+        <hr>
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="resolution">
+  <li>
+    <span class="text">{{ title }}</span>
+      <p class="small">Posted: {{ time }}, Category: {{ cat }}</p>
+    <button class="pull-right delete">Remove</button>
+  </li>
+</template>
